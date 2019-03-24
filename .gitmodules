@@ -1,0 +1,6 @@
+[submodule "dependency/Git/Gig"]
+	path = dependency/Git/Gig
+	url = https://github.com/Bitwild/Gig
+[submodule "dependency/Git/Xenomorph"]
+	path = dependency/Git/Xenomorph
+	url = https://github.com/Swifteroid/Xenomorph

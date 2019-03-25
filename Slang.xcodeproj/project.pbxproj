@@ -65,6 +65,7 @@
 		17FD05CEB47DD4001D3BA066 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		17FD081928C5D45235751360 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = framework.plist; sourceTree = "<group>"; };
 		17FD087E02B44EEBA9E6F0DF /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.private; path = ../Cartfile.private; sourceTree = "<group>"; };
+		17FD088B15E9D969583ADBF5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		17FD090C2EC4636A9B1AA968 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = test.plist; sourceTree = "<group>"; };
 		17FD0928623D259A13D2215F /* Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
 		17FD0992EC11BCB37D58A1BA /* Base - Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base - Debug.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +253,7 @@
 				E68C9C37228092700092A8B0 /* product */,
 				17FD0E0B62EFED80CA582AEF /* source */,
 				E68C9C962280A14A0092A8B0 /* Frameworks */,
+				17FD088B15E9D969583ADBF5 /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};

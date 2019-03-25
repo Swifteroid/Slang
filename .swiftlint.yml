@@ -1,0 +1,34 @@
+# https://github.com/realm/SwiftLint#configuration
+# https://github.com/realm/SwiftLint/blob/master/Rules.md
+# swiftlint rules
+
+included: source
+disabled_rules:
+  - cyclomatic_complexity
+  - discarded_notification_center_observer
+  - duplicate_imports
+  - file_length
+  - force_cast
+  - force_try
+  - function_body_length
+  - function_parameter_count
+  - identifier_name
+  - large_tuple
+  - line_length
+  - nesting
+  - opening_brace
+  - private_over_fileprivate
+  - type_body_length
+  - type_name
+  - unused_closure_parameter
+  - unused_setter_value # https://github.com/realm/SwiftLint/issues/2585
+  - weak_delegate
+
+trailing_comma:
+  mandatory_comma: true
+
+vertical_whitespace:
+  max_empty_lines: 2
+
+switch_case_alignment:
+  indented_cases: true

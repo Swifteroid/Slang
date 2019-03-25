@@ -1,0 +1,2 @@
+github "jpsim/SourceKitten" ~> 0.23
+github "sharplet/Regex" ~> 2.1

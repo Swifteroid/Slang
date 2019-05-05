@@ -58,6 +58,7 @@
 		17FD0036F8819D2295B89626 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.resolved; path = ../Cartfile.resolved; sourceTree = "<group>"; };
 		17FD0044C85EACA83263EEE9 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		17FD02A7CE86D8DDED04509C /* Base - Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base - Release.xcconfig"; sourceTree = "<group>"; };
+		17FD02F85E6E98CCD6843C52 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .travis.yml; sourceTree = "<group>"; };
 		17FD0333C0E6382EA64E69F0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		17FD0383C9F86C6CCB6104C7 /* macOS - Application.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "macOS - Application.xcconfig"; sourceTree = "<group>"; };
 		17FD0419D1B8779671599D15 /* macOS - Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "macOS - Framework.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +255,7 @@
 				17FD0E0B62EFED80CA582AEF /* source */,
 				E68C9C962280A14A0092A8B0 /* Frameworks */,
 				17FD088B15E9D969583ADBF5 /* .swiftlint.yml */,
+				17FD02F85E6E98CCD6843C52 /* .travis.yml */,
 			);
 			sourceTree = "<group>";
 		};

@@ -1,0 +1,19 @@
+# http://blog.tgrrtt.com/exploring-the-travisci-configuration-file
+# https://docs.travis-ci.com/user/build-stages
+# https://github.com/mxcl/PromiseKit/blob/master/.travis.yml
+
+os: osx
+osx_image: xcode10.2
+language: objective-c
+
+cache:
+  directories:
+    - Carthage
+
+env: DST='platform=macOS'
+
+before_install: gem install xcpretty
+install: carthage bootstrap --no-use-binaries --cache-builds --platform macOS
+
+before_script: set -exo pipefail
+script: xcodebuild -workspace "Slang.xcworkspace" -scheme "Tst - Slang" -destination "$DST" build-for-testing test | xcpretty

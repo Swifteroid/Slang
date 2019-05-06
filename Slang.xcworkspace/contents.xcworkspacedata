@@ -4,4 +4,7 @@
    <FileRef
       location = "container:Slang.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "container:Playground.playground">
+   </FileRef>
 </Workspace>

@@ -253,7 +253,6 @@
 				17FD038270D311D089B399AE /* dependency */,
 				E68C9C37228092700092A8B0 /* product */,
 				17FD0E0B62EFED80CA582AEF /* source */,
-				E68C9C962280A14A0092A8B0 /* Frameworks */,
 				17FD088B15E9D969583ADBF5 /* .swiftlint.yml */,
 				17FD02F85E6E98CCD6843C52 /* .travis.yml */,
 			);
@@ -337,13 +336,6 @@
 			name = framework;
 			sourceTree = "<group>";
 		};
-		E68C9C962280A14A0092A8B0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -353,6 +345,7 @@
 			buildPhases = (
 				E68C9C32228092700092A8B0 /* Sources */,
 				E68C9C952280A1450092A8B0 /* Frameworks */,
+				E680553122B780A100B9BB7B /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -425,6 +418,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E680553122B780A100B9BB7B /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Carthage Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Enables playground support…\ncp -rv \"${SRCROOT}/Carthage/Build/Mac/.\" \"${BUILT_PRODUCTS_DIR}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E68C9C32228092700092A8B0 /* Sources */ = {

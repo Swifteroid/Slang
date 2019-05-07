@@ -57,6 +57,7 @@
 /* Begin PBXFileReference section */
 		17FD0036F8819D2295B89626 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.resolved; path = ../Cartfile.resolved; sourceTree = "<group>"; };
 		17FD0044C85EACA83263EEE9 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		17FD00D6CFE49B5E49D0BA34 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		17FD02A7CE86D8DDED04509C /* Base - Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base - Release.xcconfig"; sourceTree = "<group>"; };
 		17FD02F85E6E98CCD6843C52 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .travis.yml; sourceTree = "<group>"; };
 		17FD0333C0E6382EA64E69F0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -255,6 +256,7 @@
 				17FD0E0B62EFED80CA582AEF /* source */,
 				17FD088B15E9D969583ADBF5 /* .swiftlint.yml */,
 				17FD02F85E6E98CCD6843C52 /* .travis.yml */,
+				17FD00D6CFE49B5E49D0BA34 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};

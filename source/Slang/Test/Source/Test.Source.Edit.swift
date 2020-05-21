@@ -1,10 +1,10 @@
-import Slang
 import Foundation
 import Nimble
 import Quick
+import Slang
 
 internal class EditSpec: Spec {
-    override internal func spec() {
+    internal override func spec() {
         it("can insert") {
             expect(Edit(3, "-baz-").apply("foobar")) == "foo-baz-bar"
             expect(Edit(3 + 1, "-baz-").apply("foo\u{F}\u{F}bar")) == "foo\u{F}-baz-\u{F}bar"

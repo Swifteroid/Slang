@@ -1,7 +1,7 @@
-import Slang
 import Foundation
 import Nimble
 import Quick
+import Slang
 
 // Structure request examples: https://github.com/apple/swift/search?q=req%3Dstructure+path%3A%2Ftest%2FSourceKit&unscoped_q=req%3Dstructure+path%3A%2Ftest%2FSourceKit
 // Test: https://github.com/apple/swift/blob/master/test/SourceKit/DocumentStructure/structure.swift
@@ -17,7 +17,7 @@ import Quick
 // strings /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/sourcekitd.framework/Versions/Current/XPCServices/SourceKitService.xpc/Contents/MacOS/SourceKitService|grep source.lang.swift.
 
 internal class SourceKindSpec: Spec {
-    override internal func spec() {
+    internal override func spec() {
         it("can initialize deep enums") {
             expect(SourceKind("source.lang.swift.decl.class")) == .decl(.class)
             expect(SourceKind("source.lang.swift.decl.enum")) == .decl(.enum)

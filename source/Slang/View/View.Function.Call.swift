@@ -16,7 +16,7 @@ public struct FunctionCall: StructureView {
             arguments.append(Argument(index: 0, name: nil, value: Fragment(structure.file, structure.bodyRange)))
         }
 
-        self.name = structure.name
+        name = structure.name
         self.structure = structure
         self.arguments = arguments
     }
@@ -27,7 +27,7 @@ public struct FunctionCall: StructureView {
 }
 
 extension FunctionCall: CustomStringConvertible {
-    public var description: String { "\(self.name)(\n\(self.arguments.map({ "    \($0)" }).joined(separator: ",\n"))\n" }
+    public var description: String { return "\(name)(\n\(arguments.map { "    \($0)" }.joined(separator: ",\n"))\n" }
 }
 
 extension FunctionCall {
@@ -46,5 +46,5 @@ extension FunctionCall {
 }
 
 extension FunctionCall.Argument: CustomStringConvertible {
-    public var description: String { "\(type(of: self))(index: \(self.index), name: \(self.name ?? "nil"), value: \(self.value.contents))" }
+    public var description: String { return "\(type(of: self))(index: \(index), name: \(name ?? "nil"), value: \(value.contents))" }
 }

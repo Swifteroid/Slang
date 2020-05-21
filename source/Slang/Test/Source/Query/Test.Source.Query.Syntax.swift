@@ -1,7 +1,7 @@
-import Slang
 import Foundation
 import Nimble
 import Quick
+import Slang
 import SourceKittenFramework
 
 private let sample = """
@@ -17,7 +17,7 @@ struct Foo {
 """
 
 internal class SyntaxQuerySpec: Spec {
-    override internal func spec() {
+    internal override func spec() {
         let disassembly = try! Disassembly(File(sample))
         let query = disassembly.query.syntax
 

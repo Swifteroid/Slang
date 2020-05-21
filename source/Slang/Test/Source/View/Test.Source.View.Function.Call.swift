@@ -1,7 +1,7 @@
-import Slang
 import Foundation
 import Nimble
 import Quick
+import Slang
 
 private let sample = """
 foo("bar")
@@ -10,7 +10,7 @@ foo("bar", a: 2, "baz", b: false, c: 1 + 2)
 """
 
 internal class FunctionCallViewSpec: Spec {
-    override internal func spec() {
+    internal override func spec() {
         let disassembly: Disassembly = try! Disassembly(File(sample))
         let structures: [Structure] = disassembly.structure[0].substructures
 

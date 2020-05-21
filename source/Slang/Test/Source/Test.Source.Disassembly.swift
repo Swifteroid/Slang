@@ -1,10 +1,10 @@
-import Slang
 import Foundation
 import Nimble
 import Quick
+import Slang
 
 internal class DisassemblySpec: Spec {
-    override internal func spec() {
+    internal override func spec() {
         it("can initialize") {
             let file = File("struct Secret { func foo() -> String? { return nil } }")
             var disassembly: Disassembly!

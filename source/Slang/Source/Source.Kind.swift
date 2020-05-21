@@ -1,6 +1,6 @@
 import Foundation
 
-fileprivate protocol SourceKindProtocol {
+private protocol SourceKindProtocol {
     init?(rawValue: String)
     init?(_ rawValue: String)
     var rawValue: String { get }
@@ -14,7 +14,7 @@ extension SourceKindProtocol {
 extension SourceKind {
     /// The source group common identifier prefix, all members of the group start with this value.
     fileprivate struct Base: RawRepresentable, ExpressibleByStringLiteral {
-        fileprivate init(stringLiteral value: StringLiteralType) { self.rawValue = value }
+        fileprivate init(stringLiteral value: StringLiteralType) { rawValue = value }
         fileprivate init(_ rawValue: String) { self.rawValue = rawValue }
         fileprivate init(rawValue: String) { self.rawValue = rawValue }
         fileprivate let rawValue: String
@@ -54,17 +54,17 @@ public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIte
 
         switch rawValue {
             case Accessibility.base: kind = Accessibility(rawValue).map({ .accessibility($0) })
-            case Decl.base: kind = Decl(rawValue).map({ .decl($0) })
-            case Raw.expr: kind = .expr
-            case Expr.base: kind = Expr(rawValue).map({ .expr($0) })
-            case Raw.forEachSequence: kind = .forEachSequence
-            case Range.base: kind = Range(rawValue).map({ .range($0) })
-            case Raw.stmt: kind = .stmt
-            case Stmt.base: kind = Stmt(rawValue).map({ .stmt($0) })
-            case StructureElem.base: kind = StructureElem(rawValue).map({ .structureElem($0) })
-            case SyntaxType.base: kind = SyntaxType(rawValue).map({ .syntaxType($0) })
-            case Raw.type: kind = .type
-            default: ()
+        case Decl.base: kind = Decl(rawValue).map { .decl($0) }
+        case Raw.expr: kind = .expr
+        case Expr.base: kind = Expr(rawValue).map { .expr($0) }
+        case Raw.forEachSequence: kind = .forEachSequence
+        case Range.base: kind = Range(rawValue).map { .range($0) }
+        case Raw.stmt: kind = .stmt
+        case Stmt.base: kind = Stmt(rawValue).map { .stmt($0) }
+        case StructureElem.base: kind = StructureElem(rawValue).map { .structureElem($0) }
+        case SyntaxType.base: kind = SyntaxType(rawValue).map { .syntaxType($0) }
+        case Raw.type: kind = .type
+        default: ()
         }
 
         self = kind ?? .unknown(rawValue)
@@ -73,15 +73,15 @@ public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIte
     public var rawValue: String {
         switch self {
             case .accessibility(let kind): return kind.rawValue
-            case .decl(let kind): return kind.rawValue
-            case .expr(let kind): return kind?.rawValue ?? Raw.expr
-            case .forEachSequence: return Raw.forEachSequence
-            case .range(let kind): return kind.rawValue
-            case .stmt(let kind): return kind?.rawValue ?? Raw.stmt
-            case .structureElem(let kind): return kind.rawValue
-            case .syntaxType(let kind): return kind.rawValue
-            case .type: return Raw.type
-            case .unknown(let rawValue): return rawValue
+        case let .decl(kind): return kind.rawValue
+        case let .expr(kind): return kind?.rawValue ?? Raw.expr
+        case .forEachSequence: return Raw.forEachSequence
+        case let .range(kind): return kind.rawValue
+        case let .stmt(kind): return kind?.rawValue ?? Raw.stmt
+        case let .structureElem(kind): return kind.rawValue
+        case let .syntaxType(kind): return kind.rawValue
+        case .type: return Raw.type
+        case let .unknown(rawValue): return rawValue
         }
     }
 
@@ -163,22 +163,22 @@ extension SourceKind {
             var kind: Decl?
 
             switch rawValue {
-                case Raw.associatedType: kind = .associatedType
-                case Raw.class: kind = .class
-                case Raw.enum: kind = .enum
-                case Enum.base: kind = Enum(rawValue).map({ Decl.enum($0) })
-                case Raw.extension: kind = .extension
-                case Extension.base: kind = Extension(rawValue).map({ .extension($0) })
-                case Function.base: kind = Function(rawValue).map({ .function($0) })
-                case Raw.genericTypeParam: kind = .genericTypeParam
-                case Raw.module: kind = .module
-                case Raw.opaqueType: kind = .opaqueType
-                case Raw.precedenceGroup: kind = .precedenceGroup
-                case Raw.protocol: kind = .protocol
-                case Raw.struct: kind = .struct
-                case Raw.typeAlias: kind = .typeAlias
-                case Var.base: kind = Var(rawValue).map({ .var($0) })
-                default: ()
+            case Raw.associatedType: kind = .associatedType
+            case Raw.class: kind = .class
+            case Raw.enum: kind = .enum
+            case Enum.base: kind = Enum(rawValue).map { Decl.enum($0) }
+            case Raw.extension: kind = .extension
+            case Extension.base: kind = Extension(rawValue).map { .extension($0) }
+            case Function.base: kind = Function(rawValue).map { .function($0) }
+            case Raw.genericTypeParam: kind = .genericTypeParam
+            case Raw.module: kind = .module
+            case Raw.opaqueType: kind = .opaqueType
+            case Raw.precedenceGroup: kind = .precedenceGroup
+            case Raw.protocol: kind = .protocol
+            case Raw.struct: kind = .struct
+            case Raw.typeAlias: kind = .typeAlias
+            case Var.base: kind = Var(rawValue).map { .var($0) }
+            default: ()
             }
 
             if let kind: Decl = kind { self = kind } else { return nil }
@@ -334,14 +334,14 @@ extension SourceKind.Decl {
             var kind: Function?
 
             switch rawValue {
-                case Accessor.base: kind = Accessor(rawValue).map({ .accessor($0) })
-                case Raw.constructor: kind = .constructor
-                case Raw.destructor: kind = .destructor
-                case Raw.free: kind = .free
-                case Method.base: kind = Method(rawValue).map({ .method($0) })
-                case Operator.base: kind = Operator(rawValue).map({ .operator($0) })
-                case Raw.subscript: kind = .subscript
-                default: ()
+            case Accessor.base: kind = Accessor(rawValue).map { .accessor($0) }
+            case Raw.constructor: kind = .constructor
+            case Raw.destructor: kind = .destructor
+            case Raw.free: kind = .free
+            case Method.base: kind = Method(rawValue).map { .method($0) }
+            case Operator.base: kind = Operator(rawValue).map { .operator($0) }
+            case Raw.subscript: kind = .subscript
+            default: ()
             }
 
             if let kind: Function = kind { self = kind } else { return nil }
@@ -349,13 +349,13 @@ extension SourceKind.Decl {
 
         public var rawValue: String {
             switch self {
-                case .accessor(let kind): return kind.rawValue
-                case .constructor: return Raw.constructor
-                case .destructor: return Raw.destructor
-                case .free: return Raw.free
-                case .method(let kind): return kind.rawValue
-                case .operator(let kind): return kind.rawValue
-                case .subscript: return Raw.subscript
+            case let .accessor(kind): return kind.rawValue
+            case .constructor: return Raw.constructor
+            case .destructor: return Raw.destructor
+            case .free: return Raw.free
+            case let .method(kind): return kind.rawValue
+            case let .operator(kind): return kind.rawValue
+            case .subscript: return Raw.subscript
             }
         }
 

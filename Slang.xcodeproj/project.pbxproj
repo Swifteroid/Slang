@@ -28,6 +28,7 @@
 		17FD0E84FA00CF11E7069F28 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0456DF1AD34992CBC4A1 /* Query.swift */; };
 		17FD0EDB82ACE3B5DC56B3B4 /* Test.Source.Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C9C7222809C530092A8B0 /* Test.Source.Kind.swift */; };
 		17FD0F5148D1E2358B04B7F2 /* Test.Source.Query.Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C9C7D22809C530092A8B0 /* Test.Source.Query.Fragment.swift */; };
+		C3B321AB24A7D445006EB8F7 /* Test.Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B321AA24A7D445006EB8F7 /* Test.Scan.swift */; };
 		E68C9C40228092700092A8B0 /* Slang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68C9C36228092700092A8B0 /* Slang.framework */; };
 		E68C9C6022809C000092A8B0 /* Source.Edit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C9C4F22809BFF0092A8B0 /* Source.Edit.swift */; };
 		E68C9C6122809C000092A8B0 /* Source.Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C9C5022809BFF0092A8B0 /* Source.Line.swift */; };
@@ -75,12 +76,13 @@
 		17FD0D5BA233F54B66BFDB23 /* View.Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.Function.swift; sourceTree = "<group>"; };
 		17FD0E1232C17AC1D3661469 /* Query.Syntax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.Syntax.swift; sourceTree = "<group>"; };
 		17FD0E8014B1C660EA8EEFCE /* Query.Structure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.Structure.swift; sourceTree = "<group>"; };
+		C3B321AA24A7D445006EB8F7 /* Test.Scan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.Scan.swift; sourceTree = "<group>"; };
 		E684E7BE247B14B000CE0868 /* Base-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Base-Debug.xcconfig"; sourceTree = "<group>"; };
 		E684E7BF247B14B000CE0868 /* macOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		E684E7C0247B14B000CE0868 /* macOS-Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS-Test.xcconfig"; sourceTree = "<group>"; };
 		E684E7C1247B14B000CE0868 /* Base-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Base-Release.xcconfig"; sourceTree = "<group>"; };
 		E684E7C2247B14B000CE0868 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
-		E688E10524990EE200E5484E /* Slang.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = Slang.podspec; sourceTree = SOURCE_ROOT; };
+		E688E10524990EE200E5484E /* Slang.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Slang.podspec; sourceTree = SOURCE_ROOT; };
 		E68C9C36228092700092A8B0 /* Slang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Slang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68C9C3F228092700092A8B0 /* Slang-Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slang-Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68C9C4F22809BFF0092A8B0 /* Source.Edit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.Edit.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				E68C9C7522809C530092A8B0 /* View */,
 				E68C9C7822809C530092A8B0 /* Test.Source.Edit.swift */,
 				E68C9C7922809C530092A8B0 /* Query */,
+				C3B321AA24A7D445006EB8F7 /* Test.Scan.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			files = (
 				17FD0D2C479F431F72959F09 /* Test.swift in Sources */,
 				17FD01195584E8FFE1371FFB /* Test.Source.Structure.swift in Sources */,
+				C3B321AB24A7D445006EB8F7 /* Test.Scan.swift in Sources */,
 				17FD0254EF438CF5E1AC4B80 /* Test.Source.Edit.swift in Sources */,
 				17FD0F5148D1E2358B04B7F2 /* Test.Source.Query.Fragment.swift in Sources */,
 				17FD0074354CD5A28CA104B9 /* Test.Source.Query.Syntax.swift in Sources */,

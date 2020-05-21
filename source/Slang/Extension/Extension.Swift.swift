@@ -28,6 +28,33 @@ import Foundation
 extension String {
     /// Truncates the string from the end to the given max length.
     internal func truncate(_ length: Int) -> String {
-        self.count < length ? self : self.prefix(length) + "…"
+        return count < length ? self : prefix(length) + "…"
+    }
+
+    public func components(separatedBy separators: [String]) -> [String] {
+        var output: [String] = [self]
+
+        for separator in separators {
+            output = output.flatMap { $0.components(separatedBy: separator) }
+        }
+
+        return output.map { $0.trimmingCharacters(in: .whitespaces) }
+    }
+
+    /// Convert Array literal to an Array
+    public var convertToArray: [String] {
+        let data = self.data(using: .utf8)
+
+        var collection: [String]!
+
+        do {
+            collection = try JSONSerialization.jsonObject(with: data!, options: []) as? [String]
+        } catch {
+            collection = components(separatedBy: .whitespacesAndNewlines)
+                .flatMap { $0.components(separatedBy: [",", ".", "[", "]", "\""]) }
+                .filter { !$0.isEmpty }
+        }
+
+        return collection
     }
 }

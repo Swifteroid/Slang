@@ -7,15 +7,15 @@ final public class FragmentQuery: Query<Fragment>, Quellection {
 
 extension FragmentQuery {
     public func select(_ predicate: Predicate) -> FragmentQuery {
-        return self.query(predicate.match(self.selection))
+        self.query(predicate.match(self.selection))
     }
 
     public func first(_ predicate: Predicate) -> FragmentQuery {
-        return self.query(self.selection.first(where: predicate.matches))
+        self.query(self.selection.first(where: predicate.matches))
     }
 
     public func last(_ predicate: Predicate) -> FragmentQuery {
-        return self.query(self.selection.last(where: predicate.matches))
+        self.query(self.selection.last(where: predicate.matches))
     }
 
     public func subfragments(_ regex: Regex, _ predicate: Predicate) -> FragmentQuery {
@@ -39,22 +39,22 @@ extension FragmentQuery {
 }
 
 extension FragmentQuery {
-    public func select(where filter: @escaping Predicate.Filter) -> FragmentQuery { return self.select(Predicate(filter: filter)) }
-    public func select(matching pattern: StaticString, options: Options? = nil) -> FragmentQuery { return self.select(Predicate(pattern: pattern, options: options)) }
-    public func select(matching regex: Regex) -> FragmentQuery { return self.select(Predicate(regex: regex)) }
+    public func select(where filter: @escaping Predicate.Filter) -> FragmentQuery { self.select(Predicate(filter: filter)) }
+    public func select(matching pattern: StaticString, options: Options? = nil) -> FragmentQuery { self.select(Predicate(pattern: pattern, options: options)) }
+    public func select(matching regex: Regex) -> FragmentQuery { self.select(Predicate(regex: regex)) }
 
-    public var first: FragmentQuery { return self.first(Predicate()) }
-    public func first(where filter: @escaping (Fragment) -> Bool) -> FragmentQuery { return self.first(Predicate(filter: filter)) }
-    public func first(matching regex: Regex) -> FragmentQuery { return self.first(Predicate(regex: regex)) }
-    public func first(matching pattern: StaticString, options: Options? = nil) -> FragmentQuery { return self.first(Predicate(pattern: pattern, options: options)) }
+    public var first: FragmentQuery { self.first(Predicate()) }
+    public func first(where filter: @escaping (Fragment) -> Bool) -> FragmentQuery { self.first(Predicate(filter: filter)) }
+    public func first(matching regex: Regex) -> FragmentQuery { self.first(Predicate(regex: regex)) }
+    public func first(matching pattern: StaticString, options: Options? = nil) -> FragmentQuery { self.first(Predicate(pattern: pattern, options: options)) }
 
-    public var last: FragmentQuery { return self.last(Predicate()) }
-    public func last(where filter: @escaping (Fragment) -> Bool) -> FragmentQuery { return self.last(Predicate(filter: filter)) }
-    public func last(matching regex: Regex) -> FragmentQuery { return self.last(Predicate(regex: regex)) }
-    public func last(matching pattern: StaticString, options: Options? = nil) -> FragmentQuery { return self.last(Predicate(pattern: pattern, options: options)) }
+    public var last: FragmentQuery { self.last(Predicate()) }
+    public func last(where filter: @escaping (Fragment) -> Bool) -> FragmentQuery { self.last(Predicate(filter: filter)) }
+    public func last(matching regex: Regex) -> FragmentQuery { self.last(Predicate(regex: regex)) }
+    public func last(matching pattern: StaticString, options: Options? = nil) -> FragmentQuery { self.last(Predicate(pattern: pattern, options: options)) }
 
-    public func subfragments(_ pattern: StaticString, options: Options? = nil) -> FragmentQuery { return self.subfragments(Regex(pattern, options: options ?? .default), Predicate()) }
-    public func subfragments(_ regex: Regex) -> FragmentQuery { return self.subfragments(regex, Predicate()) }
+    public func subfragments(_ pattern: StaticString, options: Options? = nil) -> FragmentQuery { self.subfragments(Regex(pattern, options: options ?? .default), Predicate()) }
+    public func subfragments(_ regex: Regex) -> FragmentQuery { self.subfragments(regex, Predicate()) }
 }
 
 extension FragmentQuery {
@@ -80,14 +80,14 @@ extension FragmentQuery {
         }
 
         public func match(_ fragments: [Fragment]) -> [Fragment] {
-            return fragments.filter(self.matches)
+            fragments.filter(self.matches)
         }
     }
 }
 
 extension FragmentQuery.Predicate {
-    public func filter(_ newValue: Filter?) -> FragmentQuery.Predicate { return self.updating({ $0.filter = newValue }) }
-    public func regex(_ newValue: Regex?) -> FragmentQuery.Predicate { return self.updating({ $0.regex = newValue }) }
+    public func filter(_ newValue: Filter?) -> FragmentQuery.Predicate { self.updating({ $0.filter = newValue }) }
+    public func regex(_ newValue: Regex?) -> FragmentQuery.Predicate { self.updating({ $0.regex = newValue }) }
 }
 
 extension Options {

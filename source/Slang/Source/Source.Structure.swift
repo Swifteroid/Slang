@@ -18,31 +18,31 @@ public class Structure: FileSlice {
     public let substructures: [Structure]
 
     public subscript(key: SwiftDocKey) -> SourceKitRepresentable? {
-        return self.primitive[key]
+        self.primitive[key]
     }
 }
 
 extension Structure {
-    public var kind: SourceKind! { return unwrap(self[.kind] as? String, { SourceKind(rawValue: $0) }) }
+    public var kind: SourceKind! { unwrap(self[.kind] as? String, { SourceKind(rawValue: $0) }) }
 
-    public var name: String! { return self[.name] as? String }
-    public var nameRange: Range<Int>! { return unwrap(self[.nameOffset] as? Int64, self[.nameLength] as? Int64, { Int($0) ..< Int($0 + $1) }) }
+    public var name: String! { self[.name] as? String }
+    public var nameRange: Range<Int>! { unwrap(self[.nameOffset] as? Int64, self[.nameLength] as? Int64, { Int($0) ..< Int($0 + $1) }) }
 
-    public var body: String { return self.file[self.bodyRange] }
-    public var bodyRange: Range<Int>! { return unwrap(self[.bodyOffset] as? Int64, self[.bodyLength] as? Int64, { Int($0) ..< Int($0 + $1) }) }
+    public var body: String { self.file[self.bodyRange] }
+    public var bodyRange: Range<Int>! { unwrap(self[.bodyOffset] as? Int64, self[.bodyLength] as? Int64, { Int($0) ..< Int($0 + $1) }) }
 }
 
 extension Structure: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: Structure, rhs: Structure) -> Bool { return lhs === rhs }
+    public static func == (lhs: Structure, rhs: Structure) -> Bool { lhs === rhs }
 }
 
 extension Structure: CustomStringConvertible {
-    public var description: String { return toJSON(toNSDictionary(self.primitive)) }
+    public var description: String { toJSON(toNSDictionary(self.primitive)) }
 }
 
 extension Dictionary where Key == String {
     fileprivate subscript(key: SwiftDocKey) -> Value? {
-        return self[key.rawValue]
+        self[key.rawValue]
     }
 }

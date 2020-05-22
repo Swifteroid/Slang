@@ -19,5 +19,5 @@ public class Line: FileSlice {
 
 extension Line: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: Line, rhs: Line) -> Bool { return lhs === rhs }
+    public static func == (lhs: Line, rhs: Line) -> Bool { lhs === rhs }
 }

@@ -22,5 +22,5 @@ fileprivate class Context: FileSlice {
 
 extension Context: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: Context, rhs: Context) -> Bool { return lhs === rhs }
+    public static func == (lhs: Context, rhs: Context) -> Bool { lhs === rhs }
 }

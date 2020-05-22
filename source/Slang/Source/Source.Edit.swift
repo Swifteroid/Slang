@@ -74,32 +74,32 @@ extension Edit.Instruction {
 
 extension Edit.Instruction: Comparable {
     public static func < (lhs: Edit.Instruction, rhs: Edit.Instruction) -> Bool {
-        return lhs.index > rhs.index
+        lhs.index > rhs.index
     }
 }
 
 extension Edit: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: Edit, rhs: Edit) -> Bool { return lhs === rhs }
+    public static func == (lhs: Edit, rhs: Edit) -> Bool { lhs === rhs }
 }
 
 extension String {
     public func applying(_ edit: Edit) -> String {
-        return edit.apply(self)
+        edit.apply(self)
     }
 
     ///
     public func applying(_ edits: [Edit]) -> String {
-        return edits.sorted(by: { $0.instruction < $1.instruction }).reduce(self, { $1.apply($0) })
+        edits.sorted(by: { $0.instruction < $1.instruction }).reduce(self, { $1.apply($0) })
     }
 }
 
 extension String.UTF8View {
     fileprivate subscript(index: Int) -> Index {
-        return self.index(self.startIndex, offsetBy: index)
+        self.index(self.startIndex, offsetBy: index)
     }
 
     fileprivate subscript(range: Range<Int>) -> Range<Index> {
-        return { $0 ..< self.index($0, offsetBy: range.count) }(self[range.lowerBound])
+        { $0 ..< self.index($0, offsetBy: range.count) }(self[range.lowerBound])
     }
 }

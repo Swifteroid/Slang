@@ -19,7 +19,7 @@ extension SourceKind {
         fileprivate init(_ rawValue: String) { self.rawValue = rawValue }
         fileprivate init(rawValue: String) { self.rawValue = rawValue }
         fileprivate let rawValue: String
-        fileprivate static func ~= (lhs: Base, rhs: String) -> Bool { return rhs.starts(with: lhs.rawValue) }
+        fileprivate static func ~= (lhs: Base, rhs: String) -> Bool { rhs.starts(with: lhs.rawValue) }
     }
 }
 
@@ -172,7 +172,6 @@ extension SourceKind {
         case dictionary = "source.lang.swift.expr.dictionary"
         case objectLiteral = "source.lang.swift.expr.object_literal"
         case tuple = "source.lang.swift.expr.tuple"
-
     }
 
     public enum Range: String, SourceKindProtocol {

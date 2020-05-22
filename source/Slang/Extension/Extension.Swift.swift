@@ -28,6 +28,6 @@ import Foundation
 extension String {
     /// Truncates the string from the end to the given max length.
     internal func truncate(_ length: Int) -> String {
-        return self.count < length ? self : self.prefix(length) + "…"
+        self.count < length ? self : self.prefix(length) + "…"
     }
 }

@@ -23,12 +23,12 @@ public class File {
     public var primitive: SourceKittenFramework.File
 
     public var contents: String {
-        get { return self.primitive.contents }
+        get { self.primitive.contents }
         set { self.primitive.contents = newValue }
     }
 
     public var url: URL? {
-        return self.primitive.path.map({ URL(fileURLWithPath: $0) })
+        self.primitive.path.map({ URL(fileURLWithPath: $0) })
     }
 
     public subscript(range: Range<Int>) -> String {
@@ -39,13 +39,13 @@ public class File {
     }
 
     public subscript(fragment: FileSlice) -> String {
-        return self[fragment.range]
+        self[fragment.range]
     }
 }
 
 extension File: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: File, rhs: File) -> Bool { return lhs === rhs }
+    public static func == (lhs: File, rhs: File) -> Bool { lhs === rhs }
 }
 
 /// Slice of a Swift language source code file.
@@ -56,10 +56,10 @@ public protocol FileSlice {
 
 extension FileSlice {
     public var contents: String {
-        return self.file[self]
+        self.file[self]
     }
 
     public var fragment: Fragment {
-        return Fragment(self)
+        Fragment(self)
     }
 }

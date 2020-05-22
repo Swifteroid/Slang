@@ -16,7 +16,7 @@ public class Fragment: FileSlice {
     public let range: Range<Int>
 
     public subscript(range: Range<Int>) -> Fragment {
-        return Fragment(self.file, self.range.lowerBound + range.lowerBound ..< self.range.lowerBound + range.upperBound)
+        Fragment(self.file, self.range.lowerBound + range.lowerBound ..< self.range.lowerBound + range.upperBound)
     }
 
     /// Returns subfragment for the string range.
@@ -37,13 +37,13 @@ public class Fragment: FileSlice {
 
 extension Fragment: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: Fragment, rhs: Fragment) -> Bool { return lhs.file === rhs.file && lhs.range == rhs.range }
+    public static func == (lhs: Fragment, rhs: Fragment) -> Bool { lhs.file === rhs.file && lhs.range == rhs.range }
 }
 
 extension Fragment: CustomStringConvertible {
-    public var description: String { return "\"\(self.contents.truncate(64))\" (\(self.range.lowerBound):\(self.range.upperBound))" }
+    public var description: String { "\"\(self.contents.truncate(64))\" (\(self.range.lowerBound):\(self.range.upperBound))" }
 }
 
 extension String.UTF8View {
-    fileprivate var range: Range<Int> { return 0 ..< self.count }
+    fileprivate var range: Range<Int> { 0 ..< self.count }
 }

@@ -8,6 +8,6 @@ public protocol StructureView {
 
 extension Structure {
     public func view<T: StructureView>(as type: T.Type? = T.self) -> T? {
-        return T.init(self)
+        T.init(self)
     }
 }

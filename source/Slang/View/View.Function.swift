@@ -3,12 +3,12 @@ import SourceKittenFramework
 
 /// `Function.signature` alias.
 public var Func: FunctionSignature {
-    return Function.signature
+    Function.signature
 }
 
 public struct Function {
     /// Returns empty function signature.
-    public static var signature: FunctionSignature { return FunctionSignature() }
+    public static var signature: FunctionSignature { FunctionSignature() }
 }
 
 /// Describes a function signature and provides matching capacity.
@@ -21,24 +21,24 @@ public struct FunctionSignature {
 
     /// Tests whether the signature matches the function call.
     public func matches(_ call: FunctionCall) -> Bool {
-        return call.arguments.count == self.parameters.count && self.parameters.enumerated().allSatisfy({ $0.element.matches(call.arguments[$0.offset]) })
+        call.arguments.count == self.parameters.count && self.parameters.enumerated().allSatisfy({ $0.element.matches(call.arguments[$0.offset]) })
     }
 }
 
 extension FunctionSignature {
     static func + (lhs: FunctionSignature, rhs: FunctionSignature.Parameter) -> FunctionSignature {
-        return FunctionSignature(lhs.parameters + [rhs])
+        FunctionSignature(lhs.parameters + [rhs])
     }
 }
 
 extension FunctionSignature {
-    public func any() -> FunctionSignature { return self + Parameter() }
+    public func any() -> FunctionSignature { self + Parameter() }
 }
 
 extension FunctionSignature {
-    public func any(_ kind: SourceKind.SyntaxType) -> FunctionSignature { return self + SyntaxParameter(nil, kind) }
-    public func named(_ name: String, _ kind: SourceKind.SyntaxType) -> FunctionSignature { return self + SyntaxParameter(.named(name), kind) }
-    public func unnamed(_ kind: SourceKind.SyntaxType) -> FunctionSignature { return self + SyntaxParameter(.unnamed, kind) }
+    public func any(_ kind: SourceKind.SyntaxType) -> FunctionSignature { self + SyntaxParameter(nil, kind) }
+    public func named(_ name: String, _ kind: SourceKind.SyntaxType) -> FunctionSignature { self + SyntaxParameter(.named(name), kind) }
+    public func unnamed(_ kind: SourceKind.SyntaxType) -> FunctionSignature { self + SyntaxParameter(.unnamed, kind) }
 }
 
 extension FunctionSignature {
@@ -49,7 +49,7 @@ extension FunctionSignature {
         }
         public let name: Name?
         public func matches(_ argument: FunctionCall.Argument) -> Bool {
-            return self.name?.matches(argument.name) ?? true
+            self.name?.matches(argument.name) ?? true
         }
     }
 
@@ -81,5 +81,5 @@ extension FunctionSignature {
 }
 
 public func ~= (lhs: FunctionSignature, rhs: FunctionCall?) -> Bool {
-    return rhs.map({ lhs.matches($0) }) ?? false
+    rhs.map({ lhs.matches($0) }) ?? false
 }

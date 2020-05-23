@@ -401,6 +401,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = E6440391228084EA00EC07EF;
 			productRefGroup = E68C9C37228092700092A8B0 /* product */;
@@ -528,10 +529,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD0419D1B8779671599D15 /* macOS - Framework.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = Slang;
 			};
@@ -541,10 +538,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD0419D1B8779671599D15 /* macOS - Framework.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = Slang;
 			};

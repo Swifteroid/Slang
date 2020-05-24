@@ -9,7 +9,8 @@ public class Syntax: FileSlice {
         self.file = file
         self.primitive = primitive
         self.index = index
-        self.range = primitive.offset ..< primitive.offset + primitive.length
+        // Todo: Why not use byte range directly instead?
+        self.range = primitive.offset.value ..< primitive.offset.value + primitive.length.value
         self.kind = kind
     }
 

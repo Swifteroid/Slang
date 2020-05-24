@@ -7,7 +7,8 @@ public class Line: FileSlice {
         self.file = file
         self.primitive = primitive
         self.index = primitive.index
-        self.range = primitive.byteRange.lowerBound ..< primitive.byteRange.upperBound
+        // Todo: Why not use byte range directly instead?
+        self.range = primitive.byteRange.lowerBound.value ..< primitive.byteRange.upperBound.value
     }
 
     public let file: File

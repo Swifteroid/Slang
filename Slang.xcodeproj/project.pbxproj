@@ -58,27 +58,28 @@
 		17FD0036F8819D2295B89626 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.resolved; path = ../Cartfile.resolved; sourceTree = "<group>"; };
 		17FD0044C85EACA83263EEE9 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		17FD00D6CFE49B5E49D0BA34 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		17FD02A7CE86D8DDED04509C /* Base - Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base - Release.xcconfig"; sourceTree = "<group>"; };
 		17FD02F85E6E98CCD6843C52 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .travis.yml; sourceTree = "<group>"; };
 		17FD0333C0E6382EA64E69F0 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		17FD0383C9F86C6CCB6104C7 /* macOS - Application.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "macOS - Application.xcconfig"; sourceTree = "<group>"; };
-		17FD0419D1B8779671599D15 /* macOS - Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "macOS - Framework.xcconfig"; sourceTree = "<group>"; };
 		17FD0456DF1AD34992CBC4A1 /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		17FD05CEB47DD4001D3BA066 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		17FD081928C5D45235751360 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = framework.plist; sourceTree = "<group>"; };
 		17FD087E02B44EEBA9E6F0DF /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile.private; path = ../Cartfile.private; sourceTree = "<group>"; };
 		17FD088B15E9D969583ADBF5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		17FD089E460182F31379DC70 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		17FD090C2EC4636A9B1AA968 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = test.plist; sourceTree = "<group>"; };
-		17FD0928623D259A13D2215F /* Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
 		17FD095AD7D9AE4688608488 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
-		17FD0992EC11BCB37D58A1BA /* Base - Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Base - Debug.xcconfig"; sourceTree = "<group>"; };
 		17FD09AE06EF6442348CD095 /* Query.Fragment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.Fragment.swift; sourceTree = "<group>"; };
 		17FD0B041237CCFD926FD570 /* View.Function.Call.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.Function.Call.swift; sourceTree = "<group>"; };
 		17FD0D5BA233F54B66BFDB23 /* View.Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.Function.swift; sourceTree = "<group>"; };
 		17FD0E1232C17AC1D3661469 /* Query.Syntax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.Syntax.swift; sourceTree = "<group>"; };
 		17FD0E8014B1C660EA8EEFCE /* Query.Structure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.Structure.swift; sourceTree = "<group>"; };
+		E684E7BE247B14B000CE0868 /* Base-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Base-Debug.xcconfig"; sourceTree = "<group>"; };
+		E684E7BF247B14B000CE0868 /* macOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS-Framework.xcconfig"; sourceTree = "<group>"; };
+		E684E7C0247B14B000CE0868 /* macOS-Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS-Test.xcconfig"; sourceTree = "<group>"; };
+		E684E7C1247B14B000CE0868 /* Base-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Base-Release.xcconfig"; sourceTree = "<group>"; };
+		E684E7C2247B14B000CE0868 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		E68C9C36228092700092A8B0 /* Slang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Slang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E68C9C3F228092700092A8B0 /* Tst - Slang.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tst - Slang.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E68C9C3F228092700092A8B0 /* Slang-Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slang-Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68C9C4F22809BFF0092A8B0 /* Source.Edit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.Edit.swift; sourceTree = "<group>"; };
 		E68C9C5022809BFF0092A8B0 /* Source.Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.Line.swift; sourceTree = "<group>"; };
 		E68C9C5122809BFF0092A8B0 /* Source.File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.File.swift; sourceTree = "<group>"; };
@@ -150,16 +151,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		17FD015774750D4A77337CAF /* Target */ = {
-			isa = PBXGroup;
-			children = (
-				17FD094E0486FF44FDDA5FAE /* macOS */,
-				17FD0928623D259A13D2215F /* Test.xcconfig */,
-			);
-			name = Target;
-			path = dependency/Git/Xenomorph/source/Target;
-			sourceTree = SOURCE_ROOT;
-		};
 		17FD0272BFBE54BC8288A7E5 /* Query */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,15 +185,6 @@
 			path = Slang;
 			sourceTree = "<group>";
 		};
-		17FD05209E3A2F28109E4CB4 /* configuration */ = {
-			isa = PBXGroup;
-			children = (
-				17FD0D9E3A7023B2C727866E /* Configuration */,
-				17FD015774750D4A77337CAF /* Target */,
-			);
-			name = configuration;
-			sourceTree = "<group>";
-		};
 		17FD054B3B344988AA54323D /* info */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,33 +194,26 @@
 			path = info;
 			sourceTree = "<group>";
 		};
-		17FD094E0486FF44FDDA5FAE /* macOS */ = {
+		17FD09FF6A7A1D186902C21C /* configuration */ = {
 			isa = PBXGroup;
 			children = (
-				17FD0419D1B8779671599D15 /* macOS - Framework.xcconfig */,
-				17FD0383C9F86C6CCB6104C7 /* macOS - Application.xcconfig */,
+				E684E7BE247B14B000CE0868 /* Base-Debug.xcconfig */,
+				E684E7C1247B14B000CE0868 /* Base-Release.xcconfig */,
+				E684E7C2247B14B000CE0868 /* Base.xcconfig */,
+				E684E7BF247B14B000CE0868 /* macOS-Framework.xcconfig */,
+				E684E7C0247B14B000CE0868 /* macOS-Test.xcconfig */,
 			);
-			path = macOS;
+			path = configuration;
 			sourceTree = "<group>";
 		};
 		17FD0AD0360A9B65D727E11D /* accessory */ = {
 			isa = PBXGroup;
 			children = (
-				17FD05209E3A2F28109E4CB4 /* configuration */,
 				17FD054B3B344988AA54323D /* info */,
+				17FD09FF6A7A1D186902C21C /* configuration */,
 			);
 			path = accessory;
 			sourceTree = "<group>";
-		};
-		17FD0D9E3A7023B2C727866E /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				17FD0992EC11BCB37D58A1BA /* Base - Debug.xcconfig */,
-				17FD02A7CE86D8DDED04509C /* Base - Release.xcconfig */,
-			);
-			name = Configuration;
-			path = dependency/Git/Xenomorph/source/Configuration;
-			sourceTree = SOURCE_ROOT;
 		};
 		17FD0E0B62EFED80CA582AEF /* source */ = {
 			isa = PBXGroup;
@@ -255,6 +230,7 @@
 				17FD038270D311D089B399AE /* dependency */,
 				E68C9C37228092700092A8B0 /* product */,
 				17FD0E0B62EFED80CA582AEF /* source */,
+				17FD089E460182F31379DC70 /* .gitignore */,
 				17FD088B15E9D969583ADBF5 /* .swiftlint.yml */,
 				17FD02F85E6E98CCD6843C52 /* .travis.yml */,
 				17FD00D6CFE49B5E49D0BA34 /* README.md */,
@@ -266,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				E68C9C36228092700092A8B0 /* Slang.framework */,
-				E68C9C3F228092700092A8B0 /* Tst - Slang.xctest */,
+				E68C9C3F228092700092A8B0 /* Slang-Test.xctest */,
 			);
 			name = product;
 			sourceTree = "<group>";
@@ -343,9 +319,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E68C9C35228092700092A8B0 /* Fmw - Slang */ = {
+		E68C9C35228092700092A8B0 /* Slang */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E68C9C4C228092700092A8B0 /* Build configuration list for PBXNativeTarget "Fmw - Slang" */;
+			buildConfigurationList = E68C9C4C228092700092A8B0 /* Build configuration list for PBXNativeTarget "Slang" */;
 			buildPhases = (
 				E68C9C32228092700092A8B0 /* Sources */,
 				E68C9C952280A1450092A8B0 /* Frameworks */,
@@ -355,14 +331,14 @@
 			);
 			dependencies = (
 			);
-			name = "Fmw - Slang";
+			name = Slang;
 			productName = Slang;
 			productReference = E68C9C36228092700092A8B0 /* Slang.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E68C9C3E228092700092A8B0 /* Tst - Slang */ = {
+		E68C9C3E228092700092A8B0 /* Slang-Test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E68C9C4D228092700092A8B0 /* Build configuration list for PBXNativeTarget "Tst - Slang" */;
+			buildConfigurationList = E68C9C4D228092700092A8B0 /* Build configuration list for PBXNativeTarget "Slang-Test" */;
 			buildPhases = (
 				E68C9C3B228092700092A8B0 /* Sources */,
 				E68C9C3C228092700092A8B0 /* Frameworks */,
@@ -373,9 +349,9 @@
 			dependencies = (
 				E68C9C42228092700092A8B0 /* PBXTargetDependency */,
 			);
-			name = "Tst - Slang";
+			name = "Slang-Test";
 			productName = SlangTests;
-			productReference = E68C9C3F228092700092A8B0 /* Tst - Slang.xctest */;
+			productReference = E68C9C3F228092700092A8B0 /* Slang-Test.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -408,8 +384,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E68C9C35228092700092A8B0 /* Fmw - Slang */,
-				E68C9C3E228092700092A8B0 /* Tst - Slang */,
+				E68C9C35228092700092A8B0 /* Slang */,
+				E68C9C3E228092700092A8B0 /* Slang-Test */,
 			);
 		};
 /* End PBXProject section */
@@ -496,7 +472,7 @@
 /* Begin PBXTargetDependency section */
 		E68C9C42228092700092A8B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E68C9C35228092700092A8B0 /* Fmw - Slang */;
+			target = E68C9C35228092700092A8B0 /* Slang */;
 			targetProxy = E68C9C41228092700092A8B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -504,7 +480,7 @@
 /* Begin XCBuildConfiguration section */
 		E6440396228084EA00EC07EF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FD0992EC11BCB37D58A1BA /* Base - Debug.xcconfig */;
+			baseConfigurationReference = E684E7BE247B14B000CE0868 /* Base-Debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -515,37 +491,32 @@
 		};
 		E6440397228084EA00EC07EF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FD02A7CE86D8DDED04509C /* Base - Release.xcconfig */;
+			baseConfigurationReference = E684E7C1247B14B000CE0868 /* Base-Release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifteroid.slang;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		E68C9C48228092700092A8B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FD0419D1B8779671599D15 /* macOS - Framework.xcconfig */;
+			baseConfigurationReference = E684E7BF247B14B000CE0868 /* macOS-Framework.xcconfig */;
 			buildSettings = {
-				MACH_O_TYPE = mh_dylib;
-				PRODUCT_NAME = Slang;
 			};
 			name = Debug;
 		};
 		E68C9C49228092700092A8B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FD0419D1B8779671599D15 /* macOS - Framework.xcconfig */;
+			baseConfigurationReference = E684E7BF247B14B000CE0868 /* macOS-Framework.xcconfig */;
 			buildSettings = {
-				MACH_O_TYPE = mh_dylib;
-				PRODUCT_NAME = Slang;
 			};
 			name = Release;
 		};
 		E68C9C4A228092700092A8B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FD0928623D259A13D2215F /* Test.xcconfig */;
+			baseConfigurationReference = E684E7C0247B14B000CE0868 /* macOS-Test.xcconfig */;
 			buildSettings = {
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,7 +528,7 @@
 		};
 		E68C9C4B228092700092A8B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FD0928623D259A13D2215F /* Test.xcconfig */;
+			baseConfigurationReference = E684E7C0247B14B000CE0868 /* macOS-Test.xcconfig */;
 			buildSettings = {
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E68C9C4C228092700092A8B0 /* Build configuration list for PBXNativeTarget "Fmw - Slang" */ = {
+		E68C9C4C228092700092A8B0 /* Build configuration list for PBXNativeTarget "Slang" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E68C9C48228092700092A8B0 /* Debug */,
@@ -588,7 +559,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E68C9C4D228092700092A8B0 /* Build configuration list for PBXNativeTarget "Tst - Slang" */ = {
+		E68C9C4D228092700092A8B0 /* Build configuration list for PBXNativeTarget "Slang-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E68C9C4A228092700092A8B0 /* Debug */,

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E68C9C3E228092700092A8B0"
-               BuildableName = "Tst - Slang.xctest"
-               BlueprintName = "Tst - Slang"
+               BuildableName = "Slang-Test.xctest"
+               BlueprintName = "Slang-Test"
                ReferencedContainer = "container:Slang.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E68C9C3E228092700092A8B0"
-               BuildableName = "Tst - Slang.xctest"
-               BlueprintName = "Tst - Slang"
+               BuildableName = "Slang-Test.xctest"
+               BlueprintName = "Slang-Test"
                ReferencedContainer = "container:Slang.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E68C9C35228092700092A8B0"
                BuildableName = "Slang.framework"
-               BlueprintName = "Fmw - Slang"
+               BlueprintName = "Slang"
                ReferencedContainer = "container:Slang.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E68C9C3E228092700092A8B0"
-               BuildableName = "Tst - Slang.xctest"
-               BlueprintName = "Tst - Slang"
+               BuildableName = "Slang-Test.xctest"
+               BlueprintName = "Slang-Test"
                ReferencedContainer = "container:Slang.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E68C9C35228092700092A8B0"
             BuildableName = "Slang.framework"
-            BlueprintName = "Fmw - Slang"
+            BlueprintName = "Slang"
             ReferencedContainer = "container:Slang.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E68C9C3E228092700092A8B0"
-               BuildableName = "Tst - Slang.xctest"
-               BlueprintName = "Tst - Slang"
+               BuildableName = "Slang-Test.xctest"
+               BlueprintName = "Slang-Test"
                ReferencedContainer = "container:Slang.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -78,7 +78,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E68C9C35228092700092A8B0"
             BuildableName = "Slang.framework"
-            BlueprintName = "Fmw - Slang"
+            BlueprintName = "Slang"
             ReferencedContainer = "container:Slang.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -94,7 +94,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E68C9C35228092700092A8B0"
             BuildableName = "Slang.framework"
-            BlueprintName = "Fmw - Slang"
+            BlueprintName = "Slang"
             ReferencedContainer = "container:Slang.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

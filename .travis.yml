@@ -3,8 +3,8 @@
 # https://github.com/mxcl/PromiseKit/blob/master/.travis.yml
 
 os: osx
-osx_image: xcode10.2
-language: objective-c
+osx_image: xcode11.4
+language: swift
 
 cache:
   directories:

@@ -1,8 +1,13 @@
 # https://github.com/realm/SwiftLint#configuration
-# https://github.com/realm/SwiftLint/blob/master/Rules.md
+# https://realm.github.io/SwiftLint/rule-directory.html
 # swiftlint rules
 
 included: source
+
+opt_in_rules:
+  - explicit_self
+  - modifier_order
+
 disabled_rules:
   - cyclomatic_complexity
   - discarded_notification_center_observer

@@ -1,7 +1,7 @@
 import Foundation
 import SourceKittenFramework
 
-final public class SyntaxQuery: Query<Syntax>, Quellection {
+public final class SyntaxQuery: Query<Syntax>, Quellection {
 }
 
 extension SyntaxQuery {

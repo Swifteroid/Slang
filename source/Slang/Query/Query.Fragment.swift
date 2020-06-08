@@ -2,7 +2,7 @@ import Foundation
 import SourceKittenFramework
 import Regex
 
-final public class FragmentQuery: Query<Fragment>, Quellection {
+public final class FragmentQuery: Query<Fragment>, Quellection {
 }
 
 extension FragmentQuery {

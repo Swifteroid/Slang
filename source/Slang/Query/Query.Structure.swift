@@ -1,7 +1,7 @@
 import Foundation
 import SourceKittenFramework
 
-final public class StructureQuery: Query<Structure>, Quellection {
+public final class StructureQuery: Query<Structure>, Quellection {
 }
 
 extension StructureQuery {

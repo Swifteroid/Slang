@@ -59,3 +59,21 @@ And properties:
 ## Motivation
 
 [SourceKitten](https://github.com/jpsim/SourceKitten) provides the necessary tools to digest Swift code into structured output. However, any further analysis and source manipulations must be done by hand with lots of boilerplate. Slang aims to provide extensible framework and structure for Swift source parsing, extraction, and manipulation.
+
+## Installation
+
+#### Carthage
+
+Add Slang to your `Cartfile`:
+
+```
+github "Swifteroid/Slang" ~> 0.1
+```
+
+#### Swift Package Manager
+
+Add Slang as a dependency of your package in `Package.swift`:
+
+```swift
+.package(url: "https://github.com/Swifteroid/Slang.git", from: "0.1.0")
+```

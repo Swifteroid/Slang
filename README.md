@@ -1,4 +1,4 @@
-# Slang [![Build Status](https://travis-ci.org/Swifteroid/Slang.svg?branch=master)](https://travis-ci.org/Swifteroid/Slang)
+# Slang [![Build Status](https://travis-ci.org/Swifteroid/Slang.svg)](https://travis-ci.org/Swifteroid/Slang) [![Supported Platforms](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](https://github.com/Swifteroid/Slang) [![license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://swift.org/package-manager) [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage) [![Swift Package Manager Compatible](https://img.shields.io/badge/SPM-compatible-orange.svg)](https://swift.org/package-manager)
 
 Slang is a Swift language source querying and editing framework – it's built on top of [SourceKitten](https://github.com/jpsim/SourceKitten) (which on its own is built on top of [SourceKit](https://github.com/apple/swift/tree/master/tools/SourceKit)) and provides super-simple access to code fragments, syntax, and structures for their analysis and modification.
 

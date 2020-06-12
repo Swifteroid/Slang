@@ -14,6 +14,7 @@ extension SourceKindProtocol {
 }
 
 extension SourceKind {
+    /// The source group common identifier prefix, all members of the group start with this value.
     fileprivate struct Base: RawRepresentable, ExpressibleByStringLiteral {
         fileprivate init(stringLiteral value: StringLiteralType) { self.rawValue = value }
         fileprivate init(_ rawValue: String) { self.rawValue = rawValue }
@@ -25,7 +26,7 @@ extension SourceKind {
 
 public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIterable {
     public typealias AllCases = [Self]
-    fileprivate static let base: Base = "source.lang.swift"
+    fileprivate static let base: Base = "source.lang.swift."
 
     // Todo: Do we also need a `ref` case? Doesn't it copy `decl`?
 
@@ -103,7 +104,7 @@ extension SourceKind {
 extension SourceKind {
     public enum Decl: SourceKindProtocol, RawRepresentable, CaseIterable {
         public typealias AllCases = [Self]
-        fileprivate static let base: Base = "source.lang.swift.decl"
+        fileprivate static let base: Base = "source.lang.swift.decl."
 
         case associatedType
         case `class`
@@ -205,7 +206,7 @@ extension SourceKind {
     }
 
     public enum Range: String, SourceKindProtocol, CaseIterable {
-        fileprivate static let base: Base = "source.lang.swift.range"
+        fileprivate static let base: Base = "source.lang.swift.range."
 
         case invalid = "source.lang.swift.range.invalid"
         case multiStatement = "source.lang.swift.range.multistatement"
@@ -230,7 +231,7 @@ extension SourceKind {
     }
 
     public enum StructureElem: String, SourceKindProtocol, CaseIterable {
-        fileprivate static let base: Base = "source.lang.swift.structure.elem"
+        fileprivate static let base: Base = "source.lang.swift.structure.elem."
 
         case structureElemCondExpr = "source.lang.swift.structure.elem.condition_expr"
         case structureElemExpr = "source.lang.swift.structure.elem.expr"
@@ -241,7 +242,7 @@ extension SourceKind {
     }
 
     public enum SyntaxType: String, SourceKindProtocol, CaseIterable {
-        fileprivate static let base: Base = "source.lang.swift.syntaxtype"
+        fileprivate static let base: Base = "source.lang.swift.syntaxtype."
 
         case attributeBuiltin = "source.lang.swift.syntaxtype.attribute.builtin"
         case attributeId = "source.lang.swift.syntaxtype.attribute.id"
@@ -266,7 +267,7 @@ extension SourceKind {
 
 extension SourceKind.Decl {
     public enum Enum: String, SourceKindProtocol, CaseIterable {
-        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl"
+        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.enum"
 
         case `case` = "source.lang.swift.decl.enumcase"
         case element = "source.lang.swift.decl.enumelement"
@@ -283,7 +284,7 @@ extension SourceKind.Decl {
 
     public enum Function: SourceKindProtocol, RawRepresentable, CaseIterable {
         public typealias AllCases = [Self]
-        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function"
+        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function."
 
         case accessor(Accessor)
         case constructor
@@ -340,7 +341,7 @@ extension SourceKind.Decl {
     }
 
     public enum Var: String, SourceKindProtocol, CaseIterable {
-        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.var"
+        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.var."
 
         case `class` = "source.lang.swift.decl.var.class"
         case global = "source.lang.swift.decl.var.global"
@@ -353,7 +354,7 @@ extension SourceKind.Decl {
 
 extension SourceKind.Decl.Function {
     public enum Accessor: String, SourceKindProtocol, CaseIterable {
-        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function.accessor"
+        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function.accessor."
 
         case address = "source.lang.swift.decl.function.accessor.address"
         case didSet = "source.lang.swift.decl.function.accessor.didset"
@@ -366,7 +367,7 @@ extension SourceKind.Decl.Function {
     }
 
     public enum Method: String, SourceKindProtocol, CaseIterable {
-        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function.method"
+        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function.method."
 
         case `class` = "source.lang.swift.decl.function.method.class"
         case instance = "source.lang.swift.decl.function.method.instance"
@@ -374,7 +375,7 @@ extension SourceKind.Decl.Function {
     }
 
     public enum Operator: String, SourceKindProtocol, CaseIterable {
-        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function.operator"
+        fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function.operator."
 
         case infix = "source.lang.swift.decl.function.operator.infix"
         case postfix = "source.lang.swift.decl.function.operator.postfix"

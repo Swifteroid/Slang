@@ -51,6 +51,7 @@ extension File: Hashable {
 /// Slice of a Swift language source code file.
 public protocol FileSlice {
     var file: File { get }
+    /// The slice's range in the file, equivalent to `Range<UTF8Index>`.
     var range: Range<Int> { get }
 }
 

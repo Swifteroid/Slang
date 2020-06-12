@@ -1,6 +1,6 @@
 import Foundation
 
-// https://github.com/apple/swift/blob/master/utils/gyb_sourcekit_support/UIDs.py
+// strings /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/sourcekitd.framework/Versions/Current/XPCServices/SourceKitService.xpc/Contents/MacOS/SourceKitService|grep source.lang.swift
 
 fileprivate protocol SourceKindProtocol {
     init?(rawValue: String)
@@ -23,7 +23,8 @@ extension SourceKind {
     }
 }
 
-public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable {
+public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIterable {
+    public typealias AllCases = [Self]
     fileprivate static let base: Base = "source.lang.swift"
 
     // Todo: Do we also need a `ref` case? Doesn't it copy `decl`?
@@ -81,6 +82,18 @@ public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable {
             case .unknown(let rawValue): return rawValue
         }
     }
+
+    public static let allCases: AllCases = []
+        + Decl.allCases.map({ Self.decl($0) })
+        + [Self.expr(nil)]
+        + Expr.allCases.map({ Self.expr($0) })
+        + [Self.forEachSequence]
+        + Range.allCases.map({ Self.range($0) })
+        + [Self.stmt(nil)]
+        + Stmt.allCases.map({ Self.stmt($0) })
+        + StructureElem.allCases.map({ Self.structureElem($0) })
+        + SyntaxType.allCases.map({ Self.syntaxType($0) })
+        + [Self.type]
 }
 
 extension SourceKind {
@@ -88,7 +101,8 @@ extension SourceKind {
 }
 
 extension SourceKind {
-    public enum Decl: SourceKindProtocol, RawRepresentable {
+    public enum Decl: SourceKindProtocol, RawRepresentable, CaseIterable {
+        public typealias AllCases = [Self]
         fileprivate static let base: Base = "source.lang.swift.decl"
 
         case associatedType
@@ -160,9 +174,25 @@ extension SourceKind {
                 case .`var`(let kind): return kind.rawValue
             }
         }
+
+        public static let allCases: AllCases = []
+            + [Self.associatedType]
+            + [Self.class]
+            + [Self.enum(nil)]
+            + Enum.allCases.map({ Self.enum($0) })
+            + [Self.extension(nil)]
+            + Extension.allCases.map({ Self.extension($0) })
+            + Function.allCases.map({ Self.function($0) })
+            + [Self.genericTypeParam]
+            + [Self.module]
+            + [Self.precedenceGroup]
+            + [Self.protocol]
+            + [Self.struct]
+            + [Self.typeAlias]
+            + Var.allCases.map({ Self.var($0) })
     }
 
-    public enum Expr: String, SourceKindProtocol {
+    public enum Expr: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: Base = "source.lang.swift.expr"
 
         case arg = "source.lang.swift.expr.argument"
@@ -174,7 +204,7 @@ extension SourceKind {
         case tuple = "source.lang.swift.expr.tuple"
     }
 
-    public enum Range: String, SourceKindProtocol {
+    public enum Range: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: Base = "source.lang.swift.range"
 
         case invalid = "source.lang.swift.range.invalid"
@@ -185,7 +215,7 @@ extension SourceKind {
         case singleStatement = "source.lang.swift.range.singlestatement"
     }
 
-    public enum Stmt: String, SourceKindProtocol {
+    public enum Stmt: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: Base = "source.lang.swift.stmt"
 
         case brace = "source.lang.swift.stmt.brace"
@@ -199,7 +229,7 @@ extension SourceKind {
         case `while` = "source.lang.swift.stmt.while"
     }
 
-    public enum StructureElem: String, SourceKindProtocol {
+    public enum StructureElem: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: Base = "source.lang.swift.structure.elem"
 
         case structureElemCondExpr = "source.lang.swift.structure.elem.condition_expr"
@@ -210,7 +240,7 @@ extension SourceKind {
         case structureElemTypeRef = "source.lang.swift.structure.elem.typeref"
     }
 
-    public enum SyntaxType: String, SourceKindProtocol {
+    public enum SyntaxType: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: Base = "source.lang.swift.syntaxtype"
 
         case attributeBuiltin = "source.lang.swift.syntaxtype.attribute.builtin"
@@ -235,14 +265,14 @@ extension SourceKind {
 }
 
 extension SourceKind.Decl {
-    public enum Enum: String, SourceKindProtocol {
+    public enum Enum: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: SourceKind.Base = "source.lang.swift.decl"
 
         case `case` = "source.lang.swift.decl.enumcase"
         case element = "source.lang.swift.decl.enumelement"
     }
 
-    public enum Extension: String, SourceKindProtocol {
+    public enum Extension: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.extension"
 
         case `class` = "source.lang.swift.decl.extension.class"
@@ -251,7 +281,8 @@ extension SourceKind.Decl {
         case `struct` = "source.lang.swift.decl.extension.struct"
     }
 
-    public enum Function: SourceKindProtocol, RawRepresentable {
+    public enum Function: SourceKindProtocol, RawRepresentable, CaseIterable {
+        public typealias AllCases = [Self]
         fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function"
 
         case accessor(Accessor)
@@ -297,9 +328,18 @@ extension SourceKind.Decl {
                 case .subscript: return Raw.subscript
             }
         }
+
+        public static let allCases: AllCases = []
+            + Accessor.allCases.map({ Self.accessor($0) })
+            + [Self.constructor]
+            + [Self.destructor]
+            + [Self.free]
+            + Method.allCases.map({ Self.method($0) })
+            + Operator.allCases.map({ Self.operator($0) })
+            + [Self.subscript]
     }
 
-    public enum Var: String, SourceKindProtocol {
+    public enum Var: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.var"
 
         case `class` = "source.lang.swift.decl.var.class"
@@ -312,7 +352,7 @@ extension SourceKind.Decl {
 }
 
 extension SourceKind.Decl.Function {
-    public enum Accessor: String, SourceKindProtocol {
+    public enum Accessor: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function.accessor"
 
         case address = "source.lang.swift.decl.function.accessor.address"
@@ -325,7 +365,7 @@ extension SourceKind.Decl.Function {
         case willSet = "source.lang.swift.decl.function.accessor.willset"
     }
 
-    public enum Method: String, SourceKindProtocol {
+    public enum Method: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function.method"
 
         case `class` = "source.lang.swift.decl.function.method.class"
@@ -333,7 +373,7 @@ extension SourceKind.Decl.Function {
         case `static` = "source.lang.swift.decl.function.method.static"
     }
 
-    public enum Operator: String, SourceKindProtocol {
+    public enum Operator: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: SourceKind.Base = "source.lang.swift.decl.function.operator"
 
         case infix = "source.lang.swift.decl.function.operator.infix"

@@ -1,7 +1,5 @@
 import Foundation
 
-// strings /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/sourcekitd.framework/Versions/Current/XPCServices/SourceKitService.xpc/Contents/MacOS/SourceKitService|grep source.lang.swift
-
 fileprivate protocol SourceKindProtocol {
     init?(rawValue: String)
     init?(_ rawValue: String)
@@ -24,12 +22,13 @@ extension SourceKind {
     }
 }
 
+/// Source kind identifier enumeration tree. Source kind enums represent a set of SourceKit UIDs relevant to Slang. Though it supports
+/// unknown values it doesn't represent all UIDs out of the box because it needs only a limited set.
 public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIterable {
     public typealias AllCases = [Self]
     fileprivate static let base: Base = "source.lang.swift."
 
-    // Todo: Do we also need a `ref` case? Doesn't it copy `decl`?
-
+    case accessibility(Accessibility)
     case decl(Decl)
     case expr(Expr?)
     case forEachSequence
@@ -54,6 +53,7 @@ public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIte
         var kind: SourceKind?
 
         switch rawValue {
+            case Accessibility.base: kind = Accessibility(rawValue).map({ .accessibility($0) })
             case Decl.base: kind = Decl(rawValue).map({ .decl($0) })
             case Raw.expr: kind = .expr
             case Expr.base: kind = Expr(rawValue).map({ .expr($0) })
@@ -72,6 +72,7 @@ public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIte
 
     public var rawValue: String {
         switch self {
+            case .accessibility(let kind): return kind.rawValue
             case .decl(let kind): return kind.rawValue
             case .expr(let kind): return kind?.rawValue ?? Raw.expr
             case .forEachSequence: return Raw.forEachSequence
@@ -85,6 +86,7 @@ public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIte
     }
 
     public static let allCases: AllCases = []
+        + Accessibility.allCases.map({ Self.accessibility($0) })
         + Decl.allCases.map({ Self.decl($0) })
         + [Self.expr(nil)]
         + Expr.allCases.map({ Self.expr($0) })
@@ -112,6 +114,16 @@ extension SourceKind {
 }
 
 extension SourceKind {
+    public enum Accessibility: String, SourceKindProtocol, CaseIterable {
+        fileprivate static let base: Base = "source.lang.swift.accessibility."
+
+        case `fileprivate` = "source.lang.swift.accessibility.fileprivate"
+        case `internal` = "source.lang.swift.accessibility.internal"
+        case `open` = "source.lang.swift.accessibility.open"
+        case `private` = "source.lang.swift.accessibility.private"
+        case `public` = "source.lang.swift.accessibility.public"
+    }
+
     public enum Decl: SourceKindProtocol, RawRepresentable, CaseIterable {
         public typealias AllCases = [Self]
         fileprivate static let base: Base = "source.lang.swift.decl."
@@ -123,6 +135,7 @@ extension SourceKind {
         case function(Function)
         case genericTypeParam
         case module
+        case opaqueType
         case precedenceGroup
         case `protocol`
         case `struct`
@@ -139,6 +152,7 @@ extension SourceKind {
             fileprivate static let `extension` = "source.lang.swift.decl.extension"
             fileprivate static let genericTypeParam = "source.lang.swift.decl.generic_type_param"
             fileprivate static let module = "source.lang.swift.decl.module"
+            fileprivate static let opaqueType = "source.lang.swift.decl.opaquetype"
             fileprivate static let precedenceGroup = "source.lang.swift.decl.precedencegroup"
             fileprivate static let `protocol` = "source.lang.swift.decl.protocol"
             fileprivate static let `struct` = "source.lang.swift.decl.struct"
@@ -158,6 +172,7 @@ extension SourceKind {
                 case Function.base: kind = Function(rawValue).map({ .function($0) })
                 case Raw.genericTypeParam: kind = .genericTypeParam
                 case Raw.module: kind = .module
+                case Raw.opaqueType: kind = .opaqueType
                 case Raw.precedenceGroup: kind = .precedenceGroup
                 case Raw.protocol: kind = .protocol
                 case Raw.struct: kind = .struct
@@ -176,12 +191,13 @@ extension SourceKind {
                 case .enum(let kind): return kind?.rawValue ?? Raw.enum
                 case .`extension`(let kind): return kind?.rawValue ?? Raw.extension
                 case .function(let kind): return kind.rawValue
-                case .genericTypeParam: return "source.lang.swift.decl.generic_type_param"
-                case .module: return "source.lang.swift.decl.module"
-                case .precedenceGroup: return "source.lang.swift.decl.precedencegroup"
-                case .`protocol`: return "source.lang.swift.decl.protocol"
-                case .`struct`: return "source.lang.swift.decl.struct"
-                case .typeAlias: return "source.lang.swift.decl.typealias"
+                case .genericTypeParam: return Raw.genericTypeParam
+                case .module: return Raw.module
+                case .opaqueType: return Raw.opaqueType
+                case .precedenceGroup: return Raw.precedenceGroup
+                case .`protocol`: return Raw.protocol
+                case .`struct`: return Raw.struct
+                case .typeAlias: return Raw.typeAlias
                 case .`var`(let kind): return kind.rawValue
             }
         }
@@ -196,6 +212,7 @@ extension SourceKind {
             + Function.allCases.map({ Self.function($0) })
             + [Self.genericTypeParam]
             + [Self.module]
+            + [Self.opaqueType]
             + [Self.precedenceGroup]
             + [Self.protocol]
             + [Self.struct]
@@ -254,6 +271,7 @@ extension SourceKind {
     public enum SyntaxType: String, SourceKindProtocol, CaseIterable {
         fileprivate static let base: Base = "source.lang.swift.syntaxtype."
 
+        case argument = "source.lang.swift.syntaxtype.argument"
         case attributeBuiltin = "source.lang.swift.syntaxtype.attribute.builtin"
         case attributeId = "source.lang.swift.syntaxtype.attribute.id"
         case buildConfigId = "source.lang.swift.syntaxtype.buildconfig.id"
@@ -267,6 +285,7 @@ extension SourceKind {
         case keyword = "source.lang.swift.syntaxtype.keyword"
         case number = "source.lang.swift.syntaxtype.number"
         case objectLiteral = "source.lang.swift.syntaxtype.objectliteral"
+        case parameter = "source.lang.swift.syntaxtype.parameter"
         case placeholder = "source.lang.swift.syntaxtype.placeholder"
         case poundDirectiveKeyword = "source.lang.swift.syntaxtype.pounddirective.keyword"
         case string = "source.lang.swift.syntaxtype.string"

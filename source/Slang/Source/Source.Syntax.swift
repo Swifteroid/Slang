@@ -4,7 +4,7 @@ import SourceKittenFramework
 /// Source code syntax token, wraps SourceKitten equivalent.
 public class Syntax: FileSlice {
     public init(_ file: File, _ primitive: SourceKittenFramework.SyntaxToken, index: Int) {
-        guard case .some(.syntaxType(let kind)) = SourceKind(primitive.type) else { fatalError("Couldn't extract syntax kind from the primitive: \(primitive)") }
+        guard case .syntaxType(let kind) = SourceKind(primitive.type) else { fatalError("Couldn't extract syntax kind from the primitive: \(primitive)") }
 
         self.file = file
         self.primitive = primitive

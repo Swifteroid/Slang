@@ -49,7 +49,7 @@ public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIte
         fileprivate static let type: String = "source.lang.swift.type"
     }
 
-    public init?(rawValue: String) {
+    public init(rawValue: String) {
         var kind: SourceKind?
 
         switch rawValue {
@@ -110,7 +110,7 @@ public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIte
 }
 
 extension SourceKind {
-    public init?(_ rawValue: String) { self.init(rawValue: rawValue) }
+    public init(_ rawValue: String) { self.init(rawValue: rawValue) }
 }
 
 extension SourceKind {

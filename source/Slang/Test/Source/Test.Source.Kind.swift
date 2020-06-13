@@ -28,5 +28,12 @@ internal class SourceKindSpec: Spec {
         it("can initialize all known cases") {
             SourceKind.allCases.forEach({ expect(SourceKind($0.rawValue)) == $0 })
         }
+
+        it("can compare known and unknown values") {
+            expect(SourceKind.decl(.associatedType)) == SourceKind.decl(.associatedType)
+            expect(SourceKind.unknown("foo")) == SourceKind.unknown("foo")
+            expect(SourceKind.unknown(SourceKind.decl(.associatedType).rawValue)) != SourceKind.decl(.associatedType)
+            expect(SourceKind.decl(.associatedType)) != SourceKind.unknown(SourceKind.decl(.associatedType).rawValue)
+        }
     }
 }

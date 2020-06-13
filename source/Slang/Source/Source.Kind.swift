@@ -95,6 +95,16 @@ public enum SourceKind: SourceKindProtocol, RawRepresentable, Equatable, CaseIte
         + StructureElem.allCases.map({ Self.structureElem($0) })
         + SyntaxType.allCases.map({ Self.syntaxType($0) })
         + [Self.type]
+
+    public static func == (lhs: SourceKind, rhs: SourceKind) -> Bool {
+        // A more "intelligent" equality check to handle `unknown` values. Without this, any type would
+        // equal to `unknown` if it has the same raw value.
+        switch (lhs, rhs) {
+            case (.unknown, .unknown): return lhs.rawValue == rhs.rawValue
+            case (_, .unknown), (.unknown, _): return false
+            default: return lhs.rawValue == rhs.rawValue
+        }
+    }
 }
 
 extension SourceKind {

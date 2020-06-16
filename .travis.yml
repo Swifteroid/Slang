@@ -3,16 +3,16 @@
 # https://github.com/mxcl/PromiseKit/blob/master/.travis.yml
 
 os: osx
-osx_image: xcode11.4
+osx_image: xcode11.5
 language: swift
 
 cache:
-  directories:
-    - Carthage
+  cocoapods: true
+  directories: ["Carthage"]
 
 env: DST='platform=macOS'
 
-before_install: gem install xcpretty
+before_install: gem install cocoapods xcpretty
 install:
   - swift package resolve
   - carthage bootstrap --no-use-binaries --cache-builds --platform macOS
@@ -21,3 +21,4 @@ before_script: set -exo pipefail
 script:
   - swift test
   - xcodebuild -workspace "Slang.xcworkspace" -scheme "Slang-Test" -destination "$DST" build-for-testing test | xcpretty
+  - pod lib lint

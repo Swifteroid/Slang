@@ -80,6 +80,7 @@
 		E684E7C0247B14B000CE0868 /* macOS-Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "macOS-Test.xcconfig"; sourceTree = "<group>"; };
 		E684E7C1247B14B000CE0868 /* Base-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Base-Release.xcconfig"; sourceTree = "<group>"; };
 		E684E7C2247B14B000CE0868 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		E688E10524990EE200E5484E /* Slang.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = Slang.podspec; sourceTree = SOURCE_ROOT; };
 		E68C9C36228092700092A8B0 /* Slang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Slang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68C9C3F228092700092A8B0 /* Slang-Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slang-Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68C9C4F22809BFF0092A8B0 /* Source.Edit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Source.Edit.swift; sourceTree = "<group>"; };
@@ -173,6 +174,7 @@
 				17FD0036F8819D2295B89626 /* Cartfile.resolved */,
 				17FD01E3D2925FC7FA959742 /* Package.swift */,
 				17FD0168DCE5AE6BFFF70893 /* Package.resolved */,
+				E688E10524990EE200E5484E /* Slang.podspec */,
 			);
 			path = dependency;
 			sourceTree = "<group>";
@@ -201,9 +203,9 @@
 		17FD09FF6A7A1D186902C21C /* configuration */ = {
 			isa = PBXGroup;
 			children = (
+				E684E7C2247B14B000CE0868 /* Base.xcconfig */,
 				E684E7BE247B14B000CE0868 /* Base-Debug.xcconfig */,
 				E684E7C1247B14B000CE0868 /* Base-Release.xcconfig */,
-				E684E7C2247B14B000CE0868 /* Base.xcconfig */,
 				E684E7BF247B14B000CE0868 /* macOS-Framework.xcconfig */,
 				E684E7C0247B14B000CE0868 /* macOS-Test.xcconfig */,
 			);

@@ -70,6 +70,14 @@ Add Slang to your `Cartfile`:
 github "Swifteroid/Slang" ~> 0.1
 ```
 
+#### CocoaPods
+
+Add Slang to your `Podfile`:
+
+```ruby
+pod 'Slang', '~> 0.1'
+```
+
 #### Swift Package Manager
 
 Add Slang as a dependency of your package in `Package.swift`:

@@ -6,9 +6,8 @@ public class Line: FileSlice {
     public init(_ file: File, _ primitive: SourceKittenFramework.Line) {
         self.file = file
         self.primitive = primitive
-        self.index = primitive.index
-        // Todo: Why not use byte range directly instead?
-        self.range = primitive.byteRange.lowerBound.value ..< primitive.byteRange.upperBound.value
+        index = primitive.index
+        range = primitive.byteRange.lowerBound.value ..< primitive.byteRange.upperBound.value
     }
 
     public let file: File
@@ -20,5 +19,5 @@ public class Line: FileSlice {
 
 extension Line: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: Line, rhs: Line) -> Bool { lhs === rhs }
+    public static func == (lhs: Line, rhs: Line) -> Bool { return lhs === rhs }
 }

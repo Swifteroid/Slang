@@ -1,10 +1,10 @@
-import Slang
 import Foundation
 import Nimble
 import Quick
+import Slang
 
 internal class FragmentSpec: Spec {
-    override internal func spec() {
+    internal override func spec() {
         it("can subrange") {
             let file = File("\"foo\u{F}\u{FF}\u{FFF}\u{FFFF}\u{FFFFF}\"")
             let fragment = Fragment(file)

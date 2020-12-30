@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "Slang",
     platforms: [
-        .macOS(.v10_15)
+        .macOS(.v10_10)
     ],
     products: [
         .library(name: "Slang", targets: ["Slang"]),

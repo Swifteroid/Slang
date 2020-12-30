@@ -9,8 +9,7 @@ public class Syntax: FileSlice {
         self.file = file
         self.primitive = primitive
         self.index = index
-        // Todo: Why not use byte range directly instead?
-        self.range = primitive.offset.value ..< primitive.offset.value + primitive.length.value
+        range = primitive.offset.value ..< primitive.offset.value + primitive.length.value
         self.kind = kind
     }
 
@@ -22,15 +21,15 @@ public class Syntax: FileSlice {
 }
 
 extension Syntax {
-    public func previous(in disassembly: Disassembly) -> Syntax? { { $0.indices.contains($1) ? $0[$1] : nil }(disassembly.syntax, self.index - 1) }
-    public func next(in disassembly: Disassembly) -> Syntax? { { $0.indices.contains($1) ? $0[$1] : nil }(disassembly.syntax, self.index + 1) }
+    public func previous(in disassembly: Disassembly) -> Syntax? { return { $0.indices.contains($1) ? $0[$1] : nil }(disassembly.syntax, index - 1) }
+    public func next(in disassembly: Disassembly) -> Syntax? { return { $0.indices.contains($1) ? $0[$1] : nil }(disassembly.syntax, index + 1) }
 }
 
 extension Syntax: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: Syntax, rhs: Syntax) -> Bool { lhs === rhs }
+    public static func == (lhs: Syntax, rhs: Syntax) -> Bool { return lhs === rhs }
 }
 
 extension Syntax: CustomStringConvertible {
-    public var description: String { self.primitive.description }
+    public var description: String { return primitive.description }
 }

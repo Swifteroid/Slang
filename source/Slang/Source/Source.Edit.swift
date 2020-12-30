@@ -31,10 +31,10 @@ public class Edit {
         var string: String = string
         let utf8: String.UTF8View = string.utf8
 
-        switch self.instruction {
-            case .insert(let index, let contents): string.insert(contentsOf: contents, at: utf8[index])
-            case .replace(let range, let contents): string.replaceSubrange(utf8[range], with: contents)
-            case .remove(let range): string.removeSubrange(utf8[range])
+        switch instruction {
+        case let .insert(index, contents): string.insert(contentsOf: contents, at: utf8[index])
+        case let .replace(range, contents): string.replaceSubrange(utf8[range], with: contents)
+        case let .remove(range): string.removeSubrange(utf8[range])
         }
 
         return string
@@ -52,54 +52,54 @@ extension Edit {
 extension Edit.Instruction {
     fileprivate var index: Int {
         switch self {
-            case .insert(let index, _): return index
-            case .replace(let range, _), .remove(let range): return range.lowerBound
+        case let .insert(index, _): return index
+        case let .replace(range, _), let .remove(range): return range.lowerBound
         }
     }
 
     fileprivate var range: Range<Int>? {
         switch self {
-            case .insert: return nil
-            case .replace(let range, _), .remove(let range): return range
+        case .insert: return nil
+        case let .replace(range, _), let .remove(range): return range
         }
     }
 
     fileprivate var contents: String? {
         switch self {
-            case .insert(_, let contents), .replace(_, let contents): return contents
-            case .remove: return nil
+        case let .insert(_, contents), let .replace(_, contents): return contents
+        case .remove: return nil
         }
     }
 }
 
 extension Edit.Instruction: Comparable {
     public static func < (lhs: Edit.Instruction, rhs: Edit.Instruction) -> Bool {
-        lhs.index > rhs.index
+        return lhs.index > rhs.index
     }
 }
 
 extension Edit: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: Edit, rhs: Edit) -> Bool { lhs === rhs }
+    public static func == (lhs: Edit, rhs: Edit) -> Bool { return lhs === rhs }
 }
 
 extension String {
     public func applying(_ edit: Edit) -> String {
-        edit.apply(self)
+        return edit.apply(self)
     }
 
     ///
     public func applying(_ edits: [Edit]) -> String {
-        edits.sorted(by: { $0.instruction < $1.instruction }).reduce(self, { $1.apply($0) })
+        return edits.sorted(by: { $0.instruction < $1.instruction }).reduce(self) { $1.apply($0) }
     }
 }
 
 extension String.UTF8View {
     fileprivate subscript(index: Int) -> Index {
-        self.index(self.startIndex, offsetBy: index)
+        return self.index(startIndex, offsetBy: index)
     }
 
     fileprivate subscript(range: Range<Int>) -> Range<Index> {
-        { $0 ..< self.index($0, offsetBy: range.count) }(self[range.lowerBound])
+        return { $0 ..< self.index($0, offsetBy: range.count) }(self[range.lowerBound])
     }
 }

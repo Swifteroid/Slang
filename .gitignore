@@ -19,5 +19,9 @@
 # Carthage
 /Carthage/*
 
-# SPM
-/.build
+# Swiftpm
+.build/
+.swiftpm/
+
+# Others
+.DS_Store

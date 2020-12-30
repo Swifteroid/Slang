@@ -1,10 +1,10 @@
-import Slang
 import Foundation
 import Nimble
 import Quick
+import Slang
 
 internal class QuerySpec: Spec {
-    override internal func spec() {
+    internal override func spec() {
         it("must guarantee unique selection") {
             let disassembly = try! Disassembly(File(""))
             let c1 = Context()
@@ -15,7 +15,7 @@ internal class QuerySpec: Spec {
     }
 }
 
-fileprivate class Context: FileSlice {
+private class Context: FileSlice {
     fileprivate let file: File = File("")
     fileprivate let range: Range<Int> = 0 ..< 1
 }

@@ -1,7 +1,6 @@
-import Slang
 import Foundation
 import Nimble
 import Quick
+import Slang
 
-internal class StructureSpec: Spec {
-}
+internal class StructureSpec: Spec {}

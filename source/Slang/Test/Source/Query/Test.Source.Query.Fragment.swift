@@ -1,7 +1,7 @@
-import Slang
 import Foundation
 import Nimble
 import Quick
+import Slang
 import SourceKittenFramework
 
 private let sample = """
@@ -11,7 +11,7 @@ let baz: String = "Hello world! This qux is such a foo!"
 """
 
 internal class FragmentQuerySpec: Spec {
-    override internal func spec() {
+    internal override func spec() {
         let disassembly = try! Disassembly(File(sample))
         let query = disassembly.query.fragment
 

@@ -16,7 +16,7 @@ public class Fragment: FileSlice {
     public let range: Range<Int>
 
     public subscript(range: Range<Int>) -> Fragment {
-        Fragment(self.file, self.range.lowerBound + range.lowerBound ..< self.range.lowerBound + range.upperBound)
+        return Fragment(file, self.range.lowerBound + range.lowerBound ..< self.range.lowerBound + range.upperBound)
     }
 
     /// Returns subfragment for the string range.
@@ -31,19 +31,19 @@ public class Fragment: FileSlice {
         // guard let upperBound = subrange.upperBound.samePosition(in: contents.utf8)?.encodedOffset else { fatalError("Cannot extract subfragment (\(subrange) from the fragment: \(self)") }
         // return Fragment(self.file, range.lowerBound + lowerBound ..< range.lowerBound + upperBound)
 
-        return Fragment(self.file, range.lowerBound + subrange.lowerBound.utf16Offset(in: contents) ..< range.lowerBound + subrange.upperBound.utf16Offset(in: contents))
+        return Fragment(file, range.lowerBound + subrange.lowerBound.utf16Offset(in: contents) ..< range.lowerBound + subrange.upperBound.utf16Offset(in: contents))
     }
 }
 
 extension Fragment: Hashable {
     public func hash(into hasher: inout Hasher) { hasher.combine(ObjectIdentifier(self)) }
-    public static func == (lhs: Fragment, rhs: Fragment) -> Bool { lhs.file === rhs.file && lhs.range == rhs.range }
+    public static func == (lhs: Fragment, rhs: Fragment) -> Bool { return lhs.file === rhs.file && lhs.range == rhs.range }
 }
 
 extension Fragment: CustomStringConvertible {
-    public var description: String { "\"\(self.contents.truncate(64))\" (\(self.range.lowerBound):\(self.range.upperBound))" }
+    public var description: String { return "\"\(contents.truncate(64))\" (\(range.lowerBound):\(range.upperBound))" }
 }
 
 extension String.UTF8View {
-    fileprivate var range: Range<Int> { 0 ..< self.count }
+    fileprivate var range: Range<Int> { return 0 ..< count }
 }
